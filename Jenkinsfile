@@ -14,14 +14,14 @@ node {
 	}
 	stage('Build heapster-influxdb') {
 		IMAGE_NAME="heapster-influxdb-amd64"
-		sh "cd influxdb && make container"
+		sh "cd influxdb && make build"
   }
 	stage('Push heapster-influxdb') {
 		sh "docker push ${env.PREFIX}/${IMAGE_NAME}"
 	}
 	stage('Build heapster-grafana') {
 		IMAGE_NAME="heapster-grafana-amd64"
-		sh "cd grafana && make container"
+		sh "cd grafana && make build"
   }
 	stage('Push heapster-grafana') {
 		sh "docker push ${env.PREFIX}/${IMAGE_NAME}"
