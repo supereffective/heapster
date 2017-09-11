@@ -62,7 +62,7 @@ build:
 	# This script downloads the official grafana deb package, compiles grafana for the right architecture which replaces the built-in, dynamically linked binaries
 	# Then the rootfs will be compressed into a tarball again, in order to be ADDed in the Dockerfile.
 	# Lastly, it compiles the go helper
-	docker run --rm -it -v $(TEMP_DIR):/build -w /go/src/github.com/grafana/grafana $(KUBE_CROSS_IMAGE) /bin/bash -c "\
+	docker run --rm -i -v $(TEMP_DIR):/build -w /go/src/github.com/grafana/grafana $(KUBE_CROSS_IMAGE) /bin/bash -c "\
 		curl -sSL https://github.com/grafana/grafana/archive/$(VERSION).tar.gz | tar -xz --strip-components=1 \
 		&& curl -sSL https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana_$(DEB_VERSION)_amd64.deb > /tmp/grafana.deb \
 		&& mkdir /tmp/grafanarootfs && dpkg -x /tmp/grafana.deb /tmp/grafanarootfs \
