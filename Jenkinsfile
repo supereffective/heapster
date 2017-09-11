@@ -4,8 +4,6 @@ node {
     checkout scm
   }
   stage('Build') {
-		sh 'env'
+		sh 'OVERRIDE_IMAGE_NAME=$DOCKER_REGISTRY/heapster:latest make container'
   }
 }
-
-// sh 'OVERRIDE_IMAGE_NAME=${env.DOCKER_REGISTRY}/heapster:latest make container'
