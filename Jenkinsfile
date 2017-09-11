@@ -2,9 +2,10 @@
 node {
 	stage('Checkout'){
     checkout scm
-		env.PREFIX="heapster-amd64"
+		IMAGE_NAME="heapster-amd64"
   }
   stage('Build') {
+		env.PREFIX=env.DOCKER_REGISTRY
 		sh "make container"
   }
 	stage('Push') {
