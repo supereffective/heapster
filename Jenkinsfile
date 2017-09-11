@@ -4,6 +4,7 @@ node {
     checkout scm
   }
   stage('Build') {
-		sh 'OVERRIDE_IMAGE_NAME=$DOCKER_REGISTRY/heapster:latest make container'
+		def version = sh (returnStdout: true, script: 'git rev-list --count HEAD')
+		sh 'OVERRIDE_IMAGE_NAME=$DOCKER_REGISTRY/heapster:$version make container'
   }
 }
