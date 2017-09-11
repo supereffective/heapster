@@ -1,4 +1,4 @@
-# Heapster FORK
+# Heapster
 
 [![GoDoc](https://godoc.org/k8s.io/heapster?status.svg)](https://godoc.org/k8s.io/heapster) [![Build Status](https://travis-ci.org/kubernetes/heapster.svg?branch=master)](https://travis-ci.org/kubernetes/heapster)  [![Go Report Card](https://goreportcard.com/badge/github.com/kubernetes/heapster)](https://goreportcard.com/report/github.com/kubernetes/heapster)
 
