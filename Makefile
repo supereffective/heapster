@@ -127,3 +127,4 @@ clean:
 	rm -f eventer
 
 .PHONY: all build sanitize test-unit test-unit-cov test-integration container grafana influxdb clean
+
